@@ -1,5 +1,7 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@model Bike
+
+<h1>@Model.Name</h1>
+<p>@Model.Price €</p>
+<img class="img-thumbnail" alt="Bike1" src="~/@Model.Pic">
+
+@Html.ActionLink("Add to basket", "Index", "Bike", new { wedstrijdId = Model.Id }, new { @class = "btn btn-primary" })

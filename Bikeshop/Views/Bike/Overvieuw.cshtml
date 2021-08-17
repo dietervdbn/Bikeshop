@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Bikeshop.Models.Bike>
+
+@{
+    ViewData["Title"] = "Overvieuw";
+}
+
+<h1>Bikes</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+        </tr>
+    </thead>
+    <tbody class="container">
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td class="col card">
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td class="col card">
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td class="col card">
+                @Html.ActionLink("Add to basket", "Index", "Bike", new { wedstrijdId = item.Id }, new { @class = "btn btn-primary" })
+            </td>
+            <td>
+                <img class="col card" alt="Bike1" src="~/@item.Pic">
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

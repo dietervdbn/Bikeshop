@@ -24,6 +24,10 @@ namespace Bikeshop.Controllers
             var fiets = Context.Bikes.Where(a => a.Id == Number);
             return View(fiets.FirstOrDefault());
         }
+        public IActionResult Overvieuw()
+        {
+            return View(Context.Bikes);
+        }
         public IActionResult Detail(int id)
         {
             var fiets = Context.Bikes.Where(a => a.Id == id);
