@@ -28,7 +28,10 @@
                 @Html.DisplayFor(modelItem => item.Price)
             </td>
             <td class="col card">
-                @Html.ActionLink("Add to basket", "Index", "Bike", new { wedstrijdId = item.Id }, new { @class = "btn btn-primary" })
+                @Html.ActionLink("Add to basket", "Index", "Home",null , new { @class = "btn btn-primary" })
+            </td>
+            <td class="col card">
+                @Html.ActionLink("Go to detail", "Detail", "Bike", new { id = item.Id }, new { @class = "btn btn-primary" })
             </td>
             <td>
                 <img class="col card" alt="Bike1" src="~/@item.Pic">
